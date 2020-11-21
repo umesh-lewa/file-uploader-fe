@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Form, Row, Col, Button } from 'react-bootstrap';
 import { API_URL } from '../utils/constants';
 
-const App = (props) => {
+const Home = (props) => {
 
   const [file, setFile] = useState(null); // state for storing actual image
   const [previewSrc, setPreviewSrc] = useState(''); // state for storing previewImage
@@ -35,7 +35,7 @@ const App = (props) => {
     fileReader.readAsDataURL(uploadedFile);
     setIsPreviewAvailable(uploadedFile.name.match(/\.(jpeg|jpg|png)$/));
     dropRef.current.style.border = '2px dashed #e9ebeb';
-    
+
   };
 
   const updateBorder = (dragState) => {
@@ -130,15 +130,15 @@ const App = (props) => {
                 <img className="preview-image" src={previewSrc} alt="Preview" />
               </div>
             ) : (
-              <div className="preview-message">
-                <p>No preview available for this file</p>
-              </div>
-            )
+                <div className="preview-message">
+                  <p>No preview available for this file</p>
+                </div>
+              )
           ) : (
-            <div className="preview-message">
-              <p>Image preview will be shown here after selection</p>
-            </div>
-          )}
+              <div className="preview-message">
+                <p>Image preview will be shown here after selection</p>
+              </div>
+            )}
         </div>
         <Button variant="primary" type="submit">
           Submit
@@ -148,4 +148,4 @@ const App = (props) => {
   );
 };
 
-export default App;
+export default Home;

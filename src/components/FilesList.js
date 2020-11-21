@@ -24,6 +24,7 @@ const FilesList = () => {
 
     };
 
+    // get file list on componentdidmount
     getFilesList();
   }, []);
 
@@ -38,7 +39,7 @@ const FilesList = () => {
       const split = path.split('/');
       const filename = split[split.length - 1];
       setErrorMsg('');
-
+      // downloadjs library to download the file
       return download(result.data, filename, mimetype);
 
     } catch (error) {

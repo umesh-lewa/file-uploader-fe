@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import App from '../components/App';
+import Home from '../components/Home';
 import Header from '../components/Header';
 import FilesList from '../components/FilesList';
 
@@ -14,7 +14,7 @@ const AppRouter = () => (
 
       <div className="main-content">
         <Switch>
-          <Route exact={true} path="/" component={App} />
+          <Route exact={true} path="/" component={Home} />
           <Route path="/list" component={FilesList} />
         </Switch>
       </div>
